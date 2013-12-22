@@ -78,6 +78,7 @@ p {
 /* footer */
 
 footer {
+  @include clearfix;
   margin-top: 45px;
   padding-top: 5px;
   border-top: 1px solid $grayMediumLight;
@@ -99,4 +100,10 @@ footer {
       margin-left: 10px;
     }
   }
+}
+
+/* miscellaneous */
+
+.debug_dump {
+
 }
