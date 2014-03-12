@@ -2,12 +2,16 @@
 
 <div class="row">
   <aside class="span4">
-    <section>
-      <h1>
-        <%= gravatar_for @user, size: 40 %>
+
+    <figure class="user-avatar">
+      <div class="user-avatar__image">
+        <%= gravatar_for @user, size: 220 %>
+      </div>
+      <figcaption class="user-avatar__name">
         <%= @user.name %>
-      </h1>
-    </section>
+      </figcaption>
+    </figure>
+
   </aside>
 
   <div class="span8">

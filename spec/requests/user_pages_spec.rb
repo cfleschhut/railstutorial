@@ -52,7 +52,7 @@ describe "UserPages" do
     let!(:m2) { FactoryGirl.create(:micropost, user: user, content: "Bar") }
     before { visit user_path(user) }
 
-    it { should have_selector('h1', text: user.name) }
+    it { should have_selector('.user-avatar__name', text: user.name) }
     it { should have_selector('title', text: user.name) }
 
     describe "microposts" do
