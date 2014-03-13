@@ -1,20 +1,25 @@
 <% provide(:title, @user.name) %>
 
 <div class="row">
-  <aside class="span4">
+  <aside class="span3">
 
     <figure class="user-avatar">
-      <div class="user-avatar__image">
-        <%= gravatar_for @user, size: 220 %>
-      </div>
+      <%= gravatar_for @user, size: 220, class: 'user-avatar__image' %>
       <figcaption class="user-avatar__name">
         <%= @user.name %>
       </figcaption>
     </figure>
 
+    <% if signed_in? && current_page?(id: current_user.id) %>
+      <p>
+        <%= link_to edit_user_path(current_user), class: 'btn btn-block' do %>
+          Edit Settings
+        <% end %>
+      </p>
+    <% end %>
   </aside>
 
-  <div class="span8">
+  <div class="span9">
     <% if @user.microposts.any? %>
       <h3>Microposts (<%= @user.microposts.count %>)</h3>
       <ol class="microposts">
