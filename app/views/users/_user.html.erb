@@ -1,7 +1,12 @@
 <li>
-  <%= gravatar_for user, size: 52 %>
+  <div class='user-avatar-tn'>
+    <%= gravatar_for user, size: 52 %>
+  </div>
   <%= link_to user.name, user %>
+
   <% if current_user.admin? && !current_user?(user) %>
-    <%= link_to "delete", user, method: :delete, data: { confirm: "You sure?" } %>
+    <p class='list__item--delete'>
+      <%= link_to 'delete', user, method: :delete, data: { confirm: 'Delete this user?' } %>
+    </p>
   <% end %>
 </li>

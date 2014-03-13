@@ -1,9 +1,14 @@
-<li>
-  <span class="content"><%= micropost.content %></span>
-  <span class="timestamp">
-    Posted <%= time_ago_in_words(micropost.created_at) %> ago.
-  </span>
+<li class='microposts__item' id='micropost-item-<%= micropost.id %>'>
+  <div class='microposts__item--content'>
+    <%= simple_format micropost.content %>
+  </div>
+  <p class='microposts__item--timestamp'>
+    <%= time_ago_in_words(micropost.created_at) %> ago
+  </p>
+
   <% if current_user? micropost.user %>
-    <%= link_to 'delete', micropost, method: :delete, data: { confirm: "You sure?" } %>
+    <p class='list__item--delete'>
+      <%= link_to 'delete', micropost, method: :delete, data: { confirm: "You sure?" } %>
+    </p>
   <% end %>
 </li>

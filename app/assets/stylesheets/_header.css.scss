@@ -1,0 +1,20 @@
+/* Header */
+
+.navbar__gravatar {
+  margin-right: 5px;
+  border-radius: 10px;
+  background: #999;
+}
+
+.navbar {
+  .dropdown-menu {
+    @include transition(all 250ms ease-in-out);
+    @include translate(0, -10px);
+    display: block;
+    opacity: 0;
+  }
+  .open .dropdown-menu {
+    @include translate(0, 0);
+    opacity: 1;
+  }
+}

@@ -1,0 +1,29 @@
+/* Footer */
+
+.footer {
+  @include clearfix;
+  margin-top: 40px;
+  padding-top: 10px;
+  border-top: 1px solid $grayMediumLight;
+  color: $grayLight;
+
+  a {
+    color: $gray;
+    &:hover {
+      color: $grayDarker;
+    }
+  }
+
+  p {
+    float: left;
+  }
+
+  ul {
+    float: right;
+    list-style: none;
+    li {
+      display: inline;
+      margin-left: 20px;
+    }
+  }
+}

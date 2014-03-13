@@ -9,5 +9,14 @@
  * compiled file, but it's generally better to create a new file per style scope.
  *
  *= require_self
- *= require_tree .
  */
+
+ @import 'custom';
+ @import 'sessions';
+
+ @import 'static_pages';
+ @import 'users';
+ @import 'microposts';
+
+ @import 'header';
+ @import 'footer';

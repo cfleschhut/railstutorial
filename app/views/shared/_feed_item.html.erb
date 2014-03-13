@@ -1,15 +1,20 @@
-<li id="<%= feed_item.id %>">
-  <%= link_to gravatar_for(feed_item.user), feed_item.user %>
-  <span class="user">
+<li class='microposts__item' id='micropost-item-<%= feed_item.id %>'>
+  <div class='user-avatar-tn'>
+    <%= link_to gravatar_for(feed_item.user), feed_item.user %>
+  </div>
+  <p class='microposts__item--user'>
     <%= link_to feed_item.user.name, feed_item.user %>
-  </span>
-  <span class="content">
-    <%= feed_item.content %>
-  </span>
-  <span class="timestamp">
-    Posted <%= time_ago_in_words(feed_item.created_at) %> ago.
-  </span>
+  </p>
+  <div class='microposts__item--content'>
+    <%= simple_format feed_item.content %>
+  </div>
+  <p class='microposts__item--timestamp'>
+    <%= time_ago_in_words(feed_item.created_at) %> ago
+  </p>
+
   <% if current_user? feed_item.user %>
-    <%= link_to 'delete', feed_item, method: :delete, data: { confirm: "You sure?" } %>
+    <p class='list__item--delete'>
+      <%= link_to 'delete', feed_item, method: :delete, data: { confirm: 'Delete this micropost?' } %>
+    </p>
   <% end %>
 </li>
