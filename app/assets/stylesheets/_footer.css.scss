@@ -18,12 +18,14 @@
     float: left;
   }
 
-  ul {
+  nav {
     float: right;
-    list-style: none;
-    li {
-      display: inline;
-      margin-left: 20px;
+    ul {
+      list-style: none;
+      li {
+        display: inline;
+        margin-left: 20px;
+      }
     }
   }
 }
