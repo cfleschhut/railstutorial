@@ -2,9 +2,10 @@
   <div class='navbar-inner'>
     <div class='container'>
       <%= link_to 'Sample App', root_path, class: 'brand', id: 'logo' %>
-      <nav>
-        <ul class='nav pull-right'>
-          <% if signed_in? %>
+
+      <% if signed_in? %>
+        <nav>
+          <ul class='nav pull-right'>
 
             <li class='<%= "active" if current_page? users_path %>'>
               <%= link_to 'All Users', users_path %>
@@ -28,16 +29,21 @@
                 </li>
               </ul>
             </li>
+          </ul>
+        </nav>
 
-          <% else %>
+      <% else %>
 
-            <li>
-              <%= link_to 'Sign in', signin_path %>
-            </li>
-
+        <div class='btn-group pull-right'>
+          <%= link_to signup_path, class: 'btn' do %>
+            <strong>
+              Sign up
+            </strong>
           <% end %>
-        </ul>
-      </nav>
+          <%= link_to 'Sign in', signin_path, class: 'btn' %>
+        </div>
+
+      <% end %>
     </div>
   </div>
 </header>
