@@ -1,0 +1,52 @@
+<% provide(:title, @title) %>
+
+<div class='row'>
+  <aside class='span3'>
+
+    <%= render 'shared/user_info', user: @user %>
+    <%= render 'follow_form' %>
+    <%= render 'shared/stats', user: @user %>
+
+    <% if @users.any? %>
+
+      <h5>
+        <%= @title %> (<%= @users.count %>)
+      </h5>
+      <section>
+        <ul class='user-avatars'>
+          <% @users.each do |user| %>
+            <li>
+              <%= link_to gravatar_for(user, size: 30), user %>
+            </li>
+          <% end %>
+        </ul>
+      </section>
+
+    <% end %>
+
+  </aside>
+
+  <div class="span9">
+
+    <h3>
+      <%= @title %> (<%= @users.count %>)
+    </h3>
+
+    <% if @users.any? %>
+      <ul class='users'>
+        <%= render @users %>
+      </ul>
+
+      <%= will_paginate %>
+
+    <% else %>
+
+      <p>
+        <%= @user.name %>
+        isn’t following anyone, yet.
+      </p>
+
+    <% end %>
+
+  </div>
+</div>

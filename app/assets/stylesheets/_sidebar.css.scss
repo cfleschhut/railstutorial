@@ -18,10 +18,10 @@ aside {
 }
 
 .user-stats {
+  @include clearfix;
   margin: 0;
   padding: 0;
   list-style: none;
-  overflow: hidden;
   a {
     @include box-sizing(border-box);
     display: block;
@@ -40,5 +40,16 @@ aside {
   strong {
     display: block;
     font-size: 18px;
+  }
+}
+
+.user-avatars {
+  @include clearfix;
+  margin: 0 0 20px 0;
+  padding: 0;
+  list-style: none;
+
+  a {
+    float: left;
   }
 }
