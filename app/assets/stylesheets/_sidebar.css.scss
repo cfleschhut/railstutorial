@@ -1,0 +1,46 @@
+/* sidebar */
+
+aside {
+  section {
+    border-top: 1px solid $grayLighter;
+    padding: 10px 0;
+    &:first-child {
+      border: 0;
+      padding-top: 0;
+    }
+
+    dl {
+      margin: 0 0 10px 0;
+      padding: 0;
+      dd {
+        margin: 0;
+      }
+    }
+  }
+}
+
+.user-avatar {
+  margin: 0 0 10px 0;
+}
+
+.stats {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  overflow: hidden;
+  a {
+    @include box-sizing(border-box);
+    display: block;
+    width: 50%;
+    float: left;
+    border-left: 1px solid $grayLighter;
+    padding: 10px 20px;
+  }
+  li:first-child a {
+    border-left: none;
+  }
+  strong {
+    display: block;
+    font-size: 16px;
+  }
+}

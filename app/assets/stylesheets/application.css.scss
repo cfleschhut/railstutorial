@@ -11,12 +11,16 @@
  *= require_self
  */
 
- @import 'custom';
- @import 'sessions';
+@import 'bootstrap';
 
- @import 'static_pages';
- @import 'users';
- @import 'microposts';
+@import 'custom';
+@import 'sessions';
 
- @import 'header';
- @import 'footer';
+@import 'static_pages';
+@import 'users';
+@import 'microposts';
+@import 'relationships';
+
+@import 'header';
+@import 'sidebar';
+@import 'footer';

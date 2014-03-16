@@ -1,11 +1,13 @@
-<h4>New micropost</h4>
+<section>
+  <h4>New micropost</h4>
 
-<%= form_for @micropost, html: { class: 'micropost-form' } do |f| %>
-  <%= render 'shared/error_messages', object: f.object %>
+  <%= form_for @micropost, html: { class: 'micropost-form' } do |f| %>
+    <%= render 'shared/error_messages', object: f.object %>
 
-  <div>
-    <%= f.text_area :content, maxlength: 140, placeholder: 'Compose new micropost…' %>
-  </div>
+    <div>
+      <%= f.text_area :content, rows: 4, maxlength: 140, placeholder: 'Compose new micropost…' %>
+    </div>
 
-  <%= f.submit 'Post', class: 'btn btn-block btn-primary' %>
-<% end %>
+    <%= f.submit 'Post this!', class: 'btn btn-block' %>
+  <% end %>
+</section>

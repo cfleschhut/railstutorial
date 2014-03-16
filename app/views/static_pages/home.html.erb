@@ -2,12 +2,11 @@
 
   <div class='row'>
     <aside class='span3'>
-      <section>
-        <%= render 'shared/user_info', user: current_user %>
-      </section>
-      <section>
-        <%= render 'shared/micropost_form' %>
-      </section>
+
+      <%= render 'shared/user_info', user: current_user %>
+      <%= render 'shared/stats', user: current_user %>
+      <%= render 'shared/micropost_form' %>
+
     </aside>
 
     <div class='span9'>
