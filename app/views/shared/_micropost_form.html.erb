@@ -5,7 +5,7 @@
     <%= render 'shared/error_messages', object: f.object %>
 
     <div>
-      <%= f.text_area :content, rows: 4, maxlength: 140, placeholder: 'Compose new micropost…' %>
+      <%= f.text_area :content, rows: 4, maxlength: 140, placeholder: 'Compose new micropost…', class: 'input-block-level' %>
     </div>
 
     <%= f.submit 'Post this!', class: 'btn btn-block' %>
