@@ -9,6 +9,10 @@ def sign_in(user)
   cookies[:remember_token] = user.remember_token
 end
 
+def sign_out
+  click_link 'Sign out'
+end
+
 RSpec::Matchers.define :have_error_message do |message|
   match do |page|
     page.should have_selector('.alert.alert-error', text: message)

@@ -4,13 +4,15 @@
   margin: 0 0 20px;
   padding: 0;
   list-style: none;
-  border-top: 1px solid #eee;
 }
 
 .microposts__item {
   position: relative;
   padding: 10px 0;
-  border-bottom: 1px solid #eee;
+  border-top: 1px solid #eee;
+  &:first-child {
+    border: none;
+  }
 }
 
 .microposts__item--user {

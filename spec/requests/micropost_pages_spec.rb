@@ -39,4 +39,19 @@ describe "Micropost pages" do
       end
     end
   end
+
+  describe 'microposts index' do
+    before { FactoryGirl.create(:micropost, user: user) }
+
+    describe 'as a public visitor' do
+      before do
+        sign_out
+        visit microposts_path
+        # save_and_open_page
+      end
+
+      it { should have_content('Public Stream') }
+      it { should have_selector('.microposts__item') }
+    end
+  end
 end
