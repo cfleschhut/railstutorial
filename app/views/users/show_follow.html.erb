@@ -28,9 +28,7 @@
 
   <div class="span9">
 
-    <h3>
-      <%= @title %> (<%= @users.count %>)
-    </h3>
+    <h3><%= @title %> (<%= @users.count %>)</h3>
 
     <% if @users.any? %>
       <ul class='users'>
@@ -43,7 +41,14 @@
 
       <p>
         <%= @user.name %>
-        isn’t following anyone, yet.
+
+        <% if @title == 'Following' %>
+          isn’t following anyone, yet.<br>
+          Want to follow first?
+        <% else %>
+          is missing some followers.<br>
+          Why not be the first to follow?
+        <% end %>
       </p>
 
     <% end %>
