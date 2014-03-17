@@ -21,8 +21,8 @@ When /^the user submits valid signin information$/ do
   click_button "Sign in"
 end
 
-Then /^they should see their profile page$/ do
-  page.should have_selector('title', text: @user.name)
+Then /^they should see the home page$/ do
+  page.should have_selector('.static_pages_home')
 end
 
 Then /^they should see a signout link$/ do
