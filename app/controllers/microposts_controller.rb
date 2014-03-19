@@ -3,7 +3,7 @@ class MicropostsController < ApplicationController
   before_filter :correct_user, only: :destroy
 
   def index
-    @feed_items = Micropost.paginate(page: params[:page])
+    @feed_items = Micropost.paginate(page: params[:page], per_page: 15)
   end
 
   def create
