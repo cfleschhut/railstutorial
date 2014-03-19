@@ -1,9 +1,17 @@
 <div class='row'>
   <div class='span12'>
+
     <div class='page-header'>
       <h1>Public Stream</h1>
     </div>
 
-    <%= render 'shared/feed' %>
+    <ol class='microposts'>
+      <%= render @microposts %>
+    </ol>
+
+    <div id='infinite-scrolling'>
+      <%= will_paginate %>
+    </div>
+
   </div>
 </div>

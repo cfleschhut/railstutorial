@@ -1,14 +1,28 @@
 <li class='microposts__item' id='micropost-item-<%= micropost.id %>'>
-  <div class='microposts__item--content'>
-    <%= simple_format micropost.content %>
+  <div class='user-avatar-tn'>
+    <%= link_to gravatar_for(micropost.user, size: 75), micropost.user %>
   </div>
-  <p class='microposts__item--timestamp'>
-    <%= time_ago_in_words(micropost.created_at) %> ago
-  </p>
 
-  <% if current_user? micropost.user %>
-    <p class='list__item--delete'>
-      <%= link_to 'delete', micropost, method: :delete, data: { confirm: "You sure?" } %>
-    </p>
-  <% end %>
+  <div class='microposts__item--content-wrapper'>
+    <h5 class='microposts__item--user'>
+      <%= link_to micropost.user.name, micropost.user %>
+    </h5>
+    <div class='microposts__item--content'>
+      <%= simple_format micropost.content %>
+    </div>
+    <div class='microposts__item--meta'>
+      <p class='microposts__item--timestamp'>
+        <%= time_ago_in_words(micropost.created_at) %> ago
+      </p>
+
+      <% if current_user? micropost.user %>
+        <p class='list__item--delete'>
+          <%= link_to micropost, method: :delete, data: { confirm: 'Delete this micropost?' } do %>
+            <i class='icon-trash'></i>
+            Delete
+          <% end %>
+        </p>
+      <% end %>
+    </div>
+  </div>
 </li>
