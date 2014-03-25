@@ -1,7 +1,10 @@
 language: ruby
 rvm:
-  - 2.0.0
+- 2.0.0
 script:
-  - bundle exec rake db:migrate
-  - bundle exec rake db:test:prepare
-  - bundle exec rspec
+- bundle exec rake db:migrate
+- bundle exec rake db:test:prepare
+- bundle exec rspec
+addons:
+  code_climate:
+    secure: cn+pCX73TOeZtHC8X9YQWD+eiAxfQJ/Q+HoQA+3B/qqJEENwBLZ7c6Y7VIjkrnTuSPt82lxG9FWk0xJRjIIU4VJliqBKn0xZxYvKMCmscg5O0Sg7ConpWWnXAC12PFbFvp81qLRQh5ThL9wdcH+3rvgpBZC4q+JITNEfXSlJbzY=
